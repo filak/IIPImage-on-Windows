@@ -1,7 +1,7 @@
 # IIPImage on Windows
 Build [IIPImage server](https://github.com/ruven/iipsrv) and install it with Apache on Windows 
 
-For feedback plase use [Issues](https://github.com/filak/IIPImage-on-Windows/issues).
+For feedback please use the [Issues](https://github.com/filak/IIPImage-on-Windows/issues).
 
 ## Install VS 2017 Community
 https://visualstudio.microsoft.com/cs/vs/older-downloads/
@@ -76,7 +76,7 @@ Run Build & Pray - successful build is located in:
 
      <IIP_HOME>\windows\Visual Studio 2017\Release\Win32
 
-## Install Apache and test IIPImage server
+## Install Apache and IIPImage server
 
 Define in your *etc\hosts* file:
 
@@ -179,7 +179,7 @@ Open browser and check some testing images:
 - http://iip.test/fcgi-bin/iipsrv.fcgi?FIF=/PalaisDuLouvre.tif&HEI=128&CVT=jpeg      
 - http://iip.test/fcgi-bin/iipsrv.fcgi?IIIF=/PalaisDuLouvre.tif/full/700,/0/default.jpg
 
-Check IIP log:
+Check IIPImage log:
 
       <APACHE_HOME>\logs\iipsrv.log
 
