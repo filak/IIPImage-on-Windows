@@ -97,7 +97,7 @@ Unpack A to **\<APACHE_HOME\>** folder
   
 Unpack B\\mod_fcgid...\\mod_fcgid.so to \<APACHE_HOME\>\\modules folder
 
-Update *httpd.conf*:
+Update \<APACHE_HOME\>\\conf\\httpd.conf:
 
 ```  
 Define SRVROOT "<APACHE_HOME>"
