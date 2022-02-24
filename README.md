@@ -3,9 +3,7 @@ Build and install IIPImage server (iipsrv) with Apache on Windows
 
 For feedback plase use [Issues](https://github.com/filak/IIPImage-on-Windows/issues).
 
-## Install build tools
-
-### Install VS 2017 Community
+## Install VS 2017 Community
 https://visualstudio.microsoft.com/cs/vs/older-downloads/
 
 Be sure to have selected the following components in installer:
@@ -15,7 +13,7 @@ Be sure to have selected the following components in installer:
 - Windows Universal CRT SDK
 - Windows Universal C Runtime
 
-### Install vcpkg
+## Install vcpkg
 https://github.com/microsoft/vcpkg 
 
 Clone/download the repo to **\<VCPKG_ROOT\>** folder (simple path - no spaces!)
@@ -80,9 +78,9 @@ Run Build & Pray - successful build is located in:
 
 ## Install Apache and test IIPImage server
 
-Define in your etc\hosts file:
+Define in your *etc\hosts* file:
 
-     iip.test 127.0.0.1
+     iip.test   127.0.0.1
 
 Create **\<IIPDATA\>** folder for your testing images and copy there some files
   
