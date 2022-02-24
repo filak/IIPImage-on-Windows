@@ -153,7 +153,7 @@ FcgidInitialEnv MAX_IMAGE_CACHE_SIZE "50"
 FcgidInitialEnv JPEG_QUALITY "90"
 FcgidInitialEnv MAX_CVT "3500"
 FcgidInitialEnv MAX_LAYERS "-1"
-#FcgidInitialEnv MEMCACHED_SERVERS "127.0.0.1:55370"
+#FcgidInitialEnv MEMCACHED_SERVERS "127.0.0.1:11211"
 FcgidInitialEnv ALLOW_UPSCALING "1"
 FcgidInitialEnv EMBED_ICC "0"
 
