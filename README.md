@@ -3,6 +3,8 @@ Build [IIPImage server](https://github.com/ruven/iipsrv) and install it with Apa
 
 For feedback please use the [Issues](https://github.com/filak/IIPImage-on-Windows/issues).
 
+**\<...\>** is a placeholder for absolute path to your specific folder
+
 ## Install VS 2017 Community
 https://visualstudio.microsoft.com/cs/vs/older-downloads/
 
@@ -18,14 +20,14 @@ https://github.com/microsoft/vcpkg
 
 Clone/download the repo to **\<VCPKG_ROOT\>** folder (simple path - no spaces!)
 
-Open CMD prompt and CD there:
+Open Command prompt and run:
 
-    cd <VCPKG_ROOT>
+    >  cd <VCPKG_ROOT>
 
 - run the bootstrap script:  
 
 ```
-bootstrap-vcpkg -disableMetrics
+>  bootstrap-vcpkg -disableMetrics
 ```
  
 - install packages: 
@@ -41,7 +43,7 @@ vcpkg install fastcgi
 - run the integrate command: 
 
 ```
-vcpkg integrate install
+>  vcpkg integrate install
 ```
 
 ## Build IIPImage server
@@ -106,8 +108,6 @@ LoadModule headers_module modules/mod_headers.so
 ## Add:
 LoadModule fcgid_module modules/mod_fcgid.so
 
-ServerName iip.test
-
 ## Append to end of file:
 Define IIPDATA "<IIPDATA>"
 
@@ -170,7 +170,12 @@ to your
   
     <APACHE_HOME>\iipsrv folder
 
-Open CMD prompt, CD to \<APACHE_HOME\>\\bin folder and run *httpd.exe*
+Open Command prompt and run:
+
+```
+>  cd <APACHE_HOME>\bin
+>  httpd.exe
+```
 
 Open browser and check some testing images:
       
