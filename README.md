@@ -3,7 +3,7 @@ Build [IIPImage server](https://github.com/ruven/iipsrv) and install it with Apa
 
 For feedback please use the [Issues](https://github.com/filak/IIPImage-on-Windows/issues).
 
-**\<...\>** is a placeholder for absolute path to your specific folder
+> **\<...\>** is a placeholder for absolute path to your specific folder
 
 ## Install VS 2017 Community
 https://visualstudio.microsoft.com/cs/vs/older-downloads/
