@@ -1,5 +1,5 @@
 # IIPImage on Windows
-Build and install [IIPImage server](https://github.com/ruven/iipsrv) with Apache on Windows 
+Build [IIPImage server](https://github.com/ruven/iipsrv) and install it with Apache on Windows 
 
 For feedback plase use [Issues](https://github.com/filak/IIPImage-on-Windows/issues).
 
