@@ -86,9 +86,11 @@ Define in your *etc\hosts* file:
 
 Create **\<IIPDATA\>** folder for your testing images and copy there some files
   
-- Use either JPEG2000 or Tiled Multi-Resolution TIFF - see https://iipimage.sourceforge.io/documentation/images/
+- Use either JPEG2000 or Tiled Multi-Resolution TIFF
 
-Visit ApacheLounge https://www.apachelounge.com/download/ and download Zip files:
+> For details see: https://iipimage.sourceforge.io/documentation/images/
+
+Visit ApacheLounge https://www.apachelounge.com and download Zip files:
   
 - A) Apache 2.4.x Win32
 - B) mod_fcgid Win32
@@ -133,7 +135,7 @@ Include conf/httpd-iipsrv.conf
 
 Create *httpd-iipsrv.conf* and place it next to httpd.conf
 
-https://iipimage.sourceforge.io/documentation/server/
+> For details see: https://iipimage.sourceforge.io/documentation/server/
   
 ```
 ScriptAlias /fcgi-bin/ "${SRVROOT}/iipsrv/"
