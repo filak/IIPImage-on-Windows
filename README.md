@@ -66,13 +66,17 @@ Start Visual Studio and open the project file:
 
 Select **Release** and target **x86**
 
-Adjust Project properties -> C/C++ -> AdditionalIncludeDirectories:
+Adjust: Project properties -> C/C++ -> AdditionalIncludeDirectories:
 
      <IIP_HOME>\windows\dependencies\includes;<IIP_HOME>\fcgi\include;%(AdditionalIncludeDirectories)
 
-Adjust Project properties -> C/C++ -> Preprocessor -> Preprocessor Definitions - remove:
+Adjust: Project properties -> C/C++ -> Preprocessor -> Preprocessor Definitions - remove:
 
      HAVE_KAKADU; HAVE_MEMCACHED; HAVE_TIME_H;
+     
+Check/Adjust: Project properties -> Linker -> Input -> Additional Dependencies:
+
+     jpeg.lib;libfcgi.lib;tiff.lib;zlib.lib;openjp2.lib;%(AdditionalDependencies)
 
 Run Build & Pray - successful build is located in: 
 
