@@ -35,10 +35,11 @@ Open Command prompt and run:
 ```
 vcpkg install zlib
 vcpkg install tiff
-vcpkg install libjpeg-turbo
 vcpkg install openjpeg
 vcpkg install fastcgi
 ```
+
+> libjpeg-turbo is installed as part of tiff package
 
 - run the integrate command: 
 
