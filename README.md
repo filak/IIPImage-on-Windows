@@ -98,11 +98,11 @@ If you need memcached use:
 
      jpeg.lib;libfcgi.lib;tiff.lib;zlib.lib;openjp2.lib;libhashkit.lib;libmemcached.lib;libmemcachedprotocol.lib;libmemcachedutil.lib;%(AdditionalDependencies)
 
-If you need memcached adjust:   Project properties -> VC++ Directories -> Library Directories - add:
+and adjust:   Project properties -> VC++ Directories -> Library Directories - add:
 
      ..\..\libmemcached\lib     
 
-Run Build iipsrv & Pray - successful build is located in: 
+Run Build iipsrv - successful build is located in: 
 
      <IIP_HOME>\windows\Visual Studio 2017\Release\...
 
