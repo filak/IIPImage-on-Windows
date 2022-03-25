@@ -96,11 +96,7 @@ Check/Adjust: Project properties -> Linker -> Input -> Additional Dependencies:
      
 If you need memcached use:
 
-     jpeg.lib;libfcgi.lib;tiff.lib;zlib.lib;openjp2.lib;libmemcached.lib;%(AdditionalDependencies) 
-     
-If you need memcached adjust: Project properties -> VC++ Directories -> Library Directories - add:
-
-     ;d:\Decko\iip\libmemcached\lib
+     jpeg.lib;libfcgi.lib;tiff.lib;zlib.lib;openjp2.lib;libmemcached.lib;%(AdditionalDependencies)
 
 Run Build iipsrv & Pray - successful build is located in: 
 
