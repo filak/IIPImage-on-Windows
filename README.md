@@ -32,7 +32,7 @@ Open Command prompt and run:
  
 - install packages: 
 
-> Append modifiers for your specific build target:  :x64-windows  or  :x86-windows  
+> Append modifiers for your build target:  :x64-windows  or  :x86-windows  
 
 ```
 vcpkg install zlib:x64-windows
@@ -49,19 +49,26 @@ vcpkg install fastcgi:x64-windows
 >  vcpkg integrate install
 ```
 
-## Build IIPImage server
+## Download IIPImage server
+
 Clone/download IIPImage repo 
 https://github.com/ruven/iipsrv 
 
 to **\<IIP_HOME\>** folder
 
-Copy 
+### (optional) Download libmemcached
 
-    <VCPKG_ROOT>\installed\xXX-windows\lib\*.lib 
+Source:  https://github.com/awesomized/libmemcached
+
+Binaries: https://artifacts.m6w6.name/libmemcached
+
+Download latest binaries - copy *libmemcached-awesome-...* sub-folders bin, include, lib to 
+
+    <IIP_HOME\>\libmemcached
     
-to 
+> This library is 64bit only - so you need to target x64 build
 
-     <IIP_HOME>\windows\dependencies\includes\ 
+## Build IIPImage server in VS 2017
 
 Start Visual Studio and open the project file:
 
@@ -71,15 +78,29 @@ Select **Release** and target: **x64** or **x86**
 
 Adjust: Project properties -> C/C++ -> General -> AdditionalIncludeDirectories:
 
-     <IIP_HOME>\windows\dependencies\includes;<IIP_HOME>\fcgi\include;%(AdditionalIncludeDirectories)
+     <IIP_HOME>\fcgi\include;<VCPKG_ROOT>\installed\x64-windows\include;%(AdditionalIncludeDirectories)
+     
+- if you need memcached use:     
 
-Adjust: Project properties -> C/C++ -> Preprocessor -> Preprocessor Definitions - remove:
+     <IIP_HOME>\fcgi\include;<VCPKG_ROOT>\installed\x64-windows\include;<IIP_HOME>\libmemcached\include;%(AdditionalIncludeDirectories)
+     
+Check/Adjust: Project properties -> C/C++ -> Preprocessor -> Preprocessor Definitions - adjust to:
 
-     HAVE_KAKADU; HAVE_MEMCACHED; HAVE_TIME_H;
+     WIN32;NDEBUG;_CONSOLE;HAVE_OPENJPEG;VERSION ...
+     
+- if you need memcached add ;HAVE_MEMCACHED 
      
 Check/Adjust: Project properties -> Linker -> Input -> Additional Dependencies:
 
      jpeg.lib;libfcgi.lib;tiff.lib;zlib.lib;openjp2.lib;%(AdditionalDependencies)
+     
+- if you need memcached use:
+
+     jpeg.lib;libfcgi.lib;tiff.lib;zlib.lib;openjp2.lib;libmemcached.lib;%(AdditionalDependencies) 
+     
+If you need memcached adjust: Project properties -> VC++ Directories -> Library Directories - add:
+
+     ;d:\Decko\iip\libmemcached\lib
 
 Run Build iipsrv & Pray - successful build is located in: 
 
@@ -108,7 +129,7 @@ Unpack B\\mod_fcgid...\\mod_fcgid.so to \<APACHE_HOME\>\\modules folder
 
 Create <APACHE_HOME>\iipsrv folder
 
-Copy iipsrv.fcgi file from
+Copy iipsrv.fcgi and \*.dll files from
   
     <IIP_HOME>\windows\Visual Studio 2017\Release\WinXX\ 
 
@@ -116,7 +137,7 @@ to your
   
     <APACHE_HOME>\iipsrv folder
     
-Copy \*.dll files 
+\*.dll files 
 
 - jpeg62.dll
 - libfcgi.dll
@@ -124,14 +145,6 @@ Copy \*.dll files
 - openjp2.dll
 - tiff.dll
 - zlib1.dll
-
-from
-  
-    <VCPKG_ROOT>\installed\xXX-windows\bin\
-
-to your 
-  
-    <APACHE_HOME>\iipsrv folder  
 
 Update \<APACHE_HOME\>\\conf\\httpd.conf:
 
