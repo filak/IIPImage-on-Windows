@@ -62,7 +62,7 @@ Source:  https://github.com/awesomized/libmemcached
 
 Binaries: https://artifacts.m6w6.name/libmemcached
 
-Download latest binaries - copy *libmemcached-awesome-...* sub-folders bin, include, lib to 
+Download latest binaries - copy *libmemcached-awesome-...* sub-folders (bin, include, lib) to: 
 
     <IIP_HOME\>\libmemcached
     
@@ -74,7 +74,7 @@ Start Visual Studio and open the project file:
 
      <IIP_HOME>\windows\Visual Studio 2017\iipsrv.vcxproj
 
-Select **Release** and target: **x64** or **x86**
+Select **Release** and target: **x64** (or x86)
 
 Adjust: Project properties -> C/C++ -> General -> AdditionalIncludeDirectories:
 
