@@ -78,11 +78,11 @@ Select **Release** and target: **x64**
 
 Adjust:   Project properties -> C/C++ -> General -> AdditionalIncludeDirectories
 
-     <IIP_HOME>\fcgi\include;<VCPKG_ROOT>\installed\x64-windows\include;%(AdditionalIncludeDirectories)
+     ..\..\fcgi\include;<VCPKG_ROOT>\installed\x64-windows\include;%(AdditionalIncludeDirectories)
      
 If you need memcached use:     
 
-     <IIP_HOME>\fcgi\include;<VCPKG_ROOT>\installed\x64-windows\include;<IIP_HOME>\libmemcached\include;%(AdditionalIncludeDirectories)
+     ..\..\fcgi\include;<VCPKG_ROOT>\installed\x64-windows\include;..\..\libmemcached\include;%(AdditionalIncludeDirectories)
      
 Check/Adjust:   Project properties -> C/C++ -> Preprocessor -> Preprocessor Definitions
 
@@ -100,7 +100,7 @@ If you need memcached use:
 
 If you need memcached adjust:   Project properties -> VC++ Directories -> Library Directories - add:
 
-     ;<IIP_HOME>\libmemcached\lib     
+     ;..\..\libmemcached\lib     
 
 Run Build iipsrv & Pray - successful build is located in: 
 
