@@ -74,7 +74,7 @@ Start Visual Studio and open the project file:
 
      <IIP_HOME>\windows\Visual Studio 2017\iipsrv.vcxproj
 
-Select **Release** and target: **x64** (or x86)
+Select **Release** and target: **x64**
 
 Adjust: Project properties -> C/C++ -> General -> AdditionalIncludeDirectories:
 
