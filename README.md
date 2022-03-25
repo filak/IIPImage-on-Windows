@@ -32,13 +32,13 @@ Open Command prompt and run:
  
 - install packages: 
 
-> Append modifiers for your specific build target:  :x86-windows  :x64-windows 
+> Append modifiers for your specific build target:  :x64-windows  or  :x86-windows  
 
 ```
-vcpkg install zlib
-vcpkg install tiff
-vcpkg install openjpeg
-vcpkg install fastcgi
+vcpkg install zlib:x64-windows
+vcpkg install tiff:x64-windows
+vcpkg install openjpeg:x64-windows
+vcpkg install fastcgi:x64-windows
 ```
 
 > libjpeg-turbo is installed as part of tiff package
@@ -57,7 +57,7 @@ to **\<IIP_HOME\>** folder
 
 Copy 
 
-    <VCPKG_ROOT>\installed\x86-windows\lib\*.lib 
+    <VCPKG_ROOT>\installed\xXX-windows\lib\*.lib 
     
 to 
 
@@ -67,9 +67,9 @@ Start Visual Studio and open the project file:
 
      <IIP_HOME>\windows\Visual Studio 2017\iipsrv.vcxproj
 
-Select **Release** and target **x86**
+Select **Release** and target: **x64** or **x86**
 
-Adjust: Project properties -> C/C++ -> AdditionalIncludeDirectories:
+Adjust: Project properties -> C/C++ -> General -> AdditionalIncludeDirectories:
 
      <IIP_HOME>\windows\dependencies\includes;<IIP_HOME>\fcgi\include;%(AdditionalIncludeDirectories)
 
@@ -81,9 +81,9 @@ Check/Adjust: Project properties -> Linker -> Input -> Additional Dependencies:
 
      jpeg.lib;libfcgi.lib;tiff.lib;zlib.lib;openjp2.lib;%(AdditionalDependencies)
 
-Run Build & Pray - successful build is located in: 
+Run Build iipsrv & Pray - successful build is located in: 
 
-     <IIP_HOME>\windows\Visual Studio 2017\Release\Win32
+     <IIP_HOME>\windows\Visual Studio 2017\Release\WinXX\
 
 ## Install Apache and IIPImage server
 
@@ -99,12 +99,39 @@ Create **\<IIPDATA\>** folder for your testing images and copy there some files
 
 Visit ApacheLounge https://www.apachelounge.com and download Zip files:
   
-- A) Apache 2.4.x Win32
-- B) mod_fcgid Win32
+- A) Apache 2.4.x 
+- B) mod_fcgid 
 
 Unpack A to **\<APACHE_HOME\>** folder
   
 Unpack B\\mod_fcgid...\\mod_fcgid.so to \<APACHE_HOME\>\\modules folder
+
+Create <APACHE_HOME>\iipsrv folder
+
+Copy iipsrv.fcgi file from
+  
+    <IIP_HOME>\windows\Visual Studio 2017\Release\WinXX\ 
+
+to your 
+  
+    <APACHE_HOME>\iipsrv folder
+    
+Copy \*.dll files 
+
+- jpeg62.dll
+- libfcgi.dll
+- liblzma.dll
+- openjp2.dll
+- tiff.dll
+- zlib1.dll
+
+from
+  
+    <VCPKG_ROOT>\installed\xXX-windows\bin\
+
+to your 
+  
+    <APACHE_HOME>\iipsrv folder  
 
 Update \<APACHE_HOME\>\\conf\\httpd.conf:
 
@@ -170,14 +197,6 @@ FcgidInitialEnv EMBED_ICC "0"
 FcgidIdleTimeout 0
 FcgidMaxProcessesPerClass 10  
 ```  
-
-Copy \*.dll and iipsrv.fcgi files from
-  
-    <IIP_HOME>\windows\Visual Studio 2017\Release\Win32\ 
-
-to your 
-  
-    <APACHE_HOME>\iipsrv folder
 
 Open Command prompt and run:
 
