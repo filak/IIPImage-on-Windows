@@ -64,7 +64,7 @@ Binaries: https://artifacts.m6w6.name/libmemcached
 
 Download latest binaries - copy *libmemcached-awesome-...* sub-folders (bin, include, lib) to: 
 
-    <IIP_HOME\>\libmemcached
+    <IIP_HOME>\libmemcached
     
 > This library is 64bit only - so you need to target x64 build
 
@@ -100,7 +100,7 @@ If you need memcached use:
 
 If you need memcached adjust:   Project properties -> VC++ Directories -> Library Directories - add:
 
-     ;..\..\libmemcached\lib     
+     ..\..\libmemcached\lib     
 
 Run Build iipsrv & Pray - successful build is located in: 
 
