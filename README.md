@@ -94,7 +94,7 @@ Check/Adjust: Project properties -> Linker -> Input -> Additional Dependencies:
 
      jpeg.lib;libfcgi.lib;tiff.lib;zlib.lib;openjp2.lib;%(AdditionalDependencies)
      
-- if you need memcached use:
+If you need memcached use:
 
      jpeg.lib;libfcgi.lib;tiff.lib;zlib.lib;openjp2.lib;libmemcached.lib;%(AdditionalDependencies) 
      
