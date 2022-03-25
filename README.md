@@ -32,6 +32,8 @@ Open Command prompt and run:
  
 - install packages: 
 
+> Append modifiers for your specific build target:  :x86-windows  :x64-windows 
+
 ```
 vcpkg install zlib
 vcpkg install tiff
