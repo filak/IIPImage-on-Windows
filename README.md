@@ -104,7 +104,7 @@ If you need memcached adjust: Project properties -> VC++ Directories -> Library 
 
 Run Build iipsrv & Pray - successful build is located in: 
 
-     <IIP_HOME>\windows\Visual Studio 2017\Release\WinXX\
+     <IIP_HOME>\windows\Visual Studio 2017\Release\...
 
 ## Install Apache and IIPImage server
 
