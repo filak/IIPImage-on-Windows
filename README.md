@@ -80,7 +80,7 @@ Adjust: Project properties -> C/C++ -> General -> AdditionalIncludeDirectories:
 
      <IIP_HOME>\fcgi\include;<VCPKG_ROOT>\installed\x64-windows\include;%(AdditionalIncludeDirectories)
      
-- if you need memcached use:     
+If you need memcached use:     
 
      <IIP_HOME>\fcgi\include;<VCPKG_ROOT>\installed\x64-windows\include;<IIP_HOME>\libmemcached\include;%(AdditionalIncludeDirectories)
      
