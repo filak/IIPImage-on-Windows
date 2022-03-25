@@ -100,7 +100,7 @@ If you need memcached use:
 
 If you need memcached adjust:   Project properties -> VC++ Directories -> Library Directories - add:
 
-     ;d:\Decko\iip\libmemcached\lib     
+     ;<IIP_HOME>\libmemcached\lib     
 
 Run Build iipsrv & Pray - successful build is located in: 
 
