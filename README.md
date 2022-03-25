@@ -146,6 +146,13 @@ to your
 - tiff.dll
 - zlib1.dll
 
+(memcached support:)
+
+- libhashkit.dll
+- libmemcached.dll
+- libmemcachedprotocol.dll
+- libmemcachedutil.dll
+
 Update \<APACHE_HOME\>\\conf\\httpd.conf:
 
 ```  
