@@ -76,7 +76,7 @@ Start Visual Studio and open the project file:
 
 Select **Release** and target: **x64**
 
-Adjust: Project properties -> C/C++ -> General -> AdditionalIncludeDirectories:
+Adjust:   Project properties -> C/C++ -> General -> AdditionalIncludeDirectories
 
      <IIP_HOME>\fcgi\include;<VCPKG_ROOT>\installed\x64-windows\include;%(AdditionalIncludeDirectories)
      
@@ -84,19 +84,23 @@ If you need memcached use:
 
      <IIP_HOME>\fcgi\include;<VCPKG_ROOT>\installed\x64-windows\include;<IIP_HOME>\libmemcached\include;%(AdditionalIncludeDirectories)
      
-Check/Adjust: Project properties -> C/C++ -> Preprocessor -> Preprocessor Definitions - adjust to:
+Check/Adjust:   Project properties -> C/C++ -> Preprocessor -> Preprocessor Definitions
 
      WIN32;NDEBUG;_CONSOLE;HAVE_OPENJPEG;VERSION ...
      
 - if you need memcached add ;HAVE_MEMCACHED 
      
-Check/Adjust: Project properties -> Linker -> Input -> Additional Dependencies:
+Check/Adjust:   Project properties -> Linker -> Input -> Additional Dependencies
 
      jpeg.lib;libfcgi.lib;tiff.lib;zlib.lib;openjp2.lib;%(AdditionalDependencies)
      
 If you need memcached use:
 
      jpeg.lib;libfcgi.lib;tiff.lib;zlib.lib;openjp2.lib;libmemcached.lib;%(AdditionalDependencies)
+
+If you need memcached adjust:   Project properties -> VC++ Directories -> Library Directories - add:
+
+     ;d:\Decko\iip\libmemcached\lib     
 
 Run Build iipsrv & Pray - successful build is located in: 
 
