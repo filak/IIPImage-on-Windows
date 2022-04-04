@@ -133,9 +133,9 @@ Copy iipsrv.fcgi and \*.dll files from
   
     <IIP_HOME>\windows\Visual Studio 2017\Release\...\ 
 
-to your 
+to: 
   
-    <APACHE_HOME>\iipsrv folder
+    <APACHE_HOME>\iipsrv
     
 \*.dll files 
 
