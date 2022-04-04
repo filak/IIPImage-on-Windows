@@ -94,9 +94,9 @@ If you need memcached use:
      
 Check/Adjust:   Project properties -> C/C++ -> Preprocessor -> Preprocessor Definitions
 
-     WIN32;NDEBUG;_CONSOLE;HAVE_OPENJPEG;VERSION ...
+     WIN32;NO_MEMCACHED;NDEBUG;_CONSOLE;HAVE_OPENJPEG;VERSION ...
      
-- if you need memcached add ;HAVE_MEMCACHED 
+- if you need Memcached support change NO_MEMCACHED to HAVE_MEMCACHED 
      
 Check/Adjust:   Project properties -> Linker -> Input -> Additional Dependencies
 
