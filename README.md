@@ -27,7 +27,7 @@ Open Command prompt and run:
 - run the bootstrap script:  
 
 ```
->  bootstrap-vcpkg -disableMetrics
+bootstrap-vcpkg -disableMetrics
 ```
  
 - install packages: 
@@ -46,15 +46,15 @@ vcpkg install fastcgi:x64-windows
 - run the integrate command: 
 
 ```
->  vcpkg integrate install
+vcpkg integrate install
 ```
 
 For upgrading the already installed packages use:
 
 ```
->  vcpkg update
->  git pull
->  vcpkg upgrade --no-dry-run
+vcpkg update
+git pull
+vcpkg upgrade --no-dry-run
 ```
 
 ## Download IIPImage server
