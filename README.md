@@ -49,6 +49,13 @@ vcpkg install fastcgi:x64-windows
 >  vcpkg integrate install
 ```
 
+To update the packages use:
+
+```
+>  vcpkg update
+>  vcpkg upgrade
+```
+
 ## Download IIPImage server
 
 Clone/download IIPImage repo 
