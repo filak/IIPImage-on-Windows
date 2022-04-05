@@ -154,12 +154,18 @@ to:
 - tiff.dll
 - zlib1.dll
 
-(memcached support:)
+For Memcached support copy from
+
+<IIP_HOME>\libmemcached\bin\*.dll
 
 - libhashkit.dll
 - libmemcached.dll
 - libmemcachedprotocol.dll
 - libmemcachedutil.dll
+
+to: 
+  
+    <APACHE_HOME>\iipsrv
 
 Update \<APACHE_HOME\>\\conf\\httpd.conf:
 
