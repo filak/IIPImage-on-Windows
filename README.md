@@ -86,11 +86,11 @@ Select **Release** and target: **x64**
 
 Adjust:   Project properties -> C/C++ -> General -> AdditionalIncludeDirectories
 
-     ..\..\fcgi\include;<VCPKG_ROOT>\installed\x64-windows\include;%(AdditionalIncludeDirectories)
+     ..\..\fcgi\include;%(AdditionalIncludeDirectories)
      
 If you need memcached use:     
 
-     ..\..\fcgi\include;<VCPKG_ROOT>\installed\x64-windows\include;..\..\libmemcached\include;%(AdditionalIncludeDirectories)
+     ..\..\fcgi\include;..\..\libmemcached\include;%(AdditionalIncludeDirectories)
      
 Check/Adjust:   Project properties -> C/C++ -> Preprocessor -> Preprocessor Definitions
 
