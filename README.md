@@ -104,7 +104,7 @@ Check/Adjust:   Project properties -> Linker -> Input -> Additional Dependencies
      
 If you need memcached use:
 
-     jpeg.lib;libfcgi.lib;tiff.lib;zlib.lib;openjp2.lib;libhashkit.lib;libmemcached.lib;libmemcachedprotocol.lib;libmemcachedutil.lib;%(AdditionalDependencies)
+     jpeg.lib;libfcgi.lib;tiff.lib;zlib.lib;openjp2.lib;libmemcached.lib;%(AdditionalDependencies)
 
 and adjust:   Project properties -> VC++ Directories -> Library Directories - add:
 
