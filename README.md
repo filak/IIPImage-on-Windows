@@ -223,7 +223,7 @@ FcgidInitialEnv JPEG_QUALITY "90"
 FcgidInitialEnv MAX_CVT "3500"
 FcgidInitialEnv MAX_LAYERS "-1"
 #FcgidInitialEnv MEMCACHED_SERVERS "127.0.0.1:11211"
-FcgidInitialEnv ALLOW_UPSCALING "1"
+FcgidInitialEnv ALLOW_UPSCALING "0"
 FcgidInitialEnv EMBED_ICC "0"
 
 # Define the idle timeout as unlimited and the number of processes we want
@@ -236,6 +236,12 @@ Open Command prompt and run:
 ```
 >  cd <APACHE_HOME>\bin
 >  httpd.exe
+```
+
+Or install the service:
+
+```
+>  httpd.exe -k install
 ```
 
 Open browser and check some testing images:
