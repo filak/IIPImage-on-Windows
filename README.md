@@ -108,7 +108,7 @@ If you need memcached use:
 
 and adjust:   Project properties -> VC++ Directories -> Library Directories - add:
 
-     ..\..\libmemcached\lib     
+     ..\..\libmemcached\lib;     
 
 Run Build iipsrv - successful build is located in: 
 
