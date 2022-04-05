@@ -184,10 +184,9 @@ Include conf/httpd-iipsrv.conf
   ServerName iip.test
   DocumentRoot "${IIPDATA}"
 
-  ## Disable caching to avoid IIP crashing on Windows
-  ## - see https://github.com/ruven/iipsrv/issues/208
-  Header always set Cache-Control "max-age=0, no-cache, no-store, must-revalidate"
-  Header always set Pragma "no-cache"
+  ## Disable caching - just for testing
+  #Header always set Cache-Control "max-age=0, no-cache, no-store, must-revalidate"
+  #Header always set Pragma "no-cache"
 
   <Directory "${IIPDATA}">
      Require all granted
