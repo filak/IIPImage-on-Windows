@@ -241,7 +241,7 @@ Open Command prompt and run:
 Or install the service:
 
 ```
->  httpd.exe -k install
+>  httpd.exe -k install -n "Apache24srv"
 ```
 
 Open browser and check some testing images:
