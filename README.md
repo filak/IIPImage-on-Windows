@@ -84,7 +84,7 @@ Start Visual Studio and open the project file:
 
 Select **Release** and target: **x64**
 
-Adjust:   Project properties -> C/C++ -> General -> AdditionalIncludeDirectories
+Adjust:   Project properties -> C/C++ -> General -> *Additional Include Directories*
 
      ..\..\fcgi\include;%(AdditionalIncludeDirectories)
      
@@ -92,21 +92,21 @@ If you need memcached use:
 
      ..\..\fcgi\include;..\..\libmemcached\include;%(AdditionalIncludeDirectories)
      
-Check/Adjust:   Project properties -> C/C++ -> Preprocessor -> Preprocessor Definitions
+Check/Adjust:   Project properties -> C/C++ -> Preprocessor -> *Preprocessor Definitions*
 
      WIN32;NO_MEMCACHED;NDEBUG;_CONSOLE;HAVE_OPENJPEG;VERSION ...
      
 - if you need Memcached support change NO_MEMCACHED to HAVE_MEMCACHED 
      
-Check/Adjust:   Project properties -> Linker -> Input -> Additional Dependencies
+Check/Adjust:   Project properties -> Linker -> Input -> *Additional Dependencies*
 
      jpeg.lib;libfcgi.lib;tiff.lib;zlib.lib;openjp2.lib;%(AdditionalDependencies)
      
-If you need memcached use:
+If you need Memcached use:
 
      jpeg.lib;libfcgi.lib;tiff.lib;zlib.lib;openjp2.lib;libmemcached.lib;%(AdditionalDependencies)
 
-and adjust:   Project properties -> VC++ Directories -> Library Directories - add:
+and add to:   Project properties -> Linker -> General -> *Additional Library Directories*
 
      ..\..\libmemcached\lib;     
 
