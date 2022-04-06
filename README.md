@@ -37,6 +37,7 @@ bootstrap-vcpkg -disableMetrics
 ```
 vcpkg install zlib:x64-windows
 vcpkg install tiff:x64-windows
+vcpkg install libjpeg-turbo:x64-windows
 vcpkg install openjpeg:x64-windows
 vcpkg install fastcgi:x64-windows
 ```
