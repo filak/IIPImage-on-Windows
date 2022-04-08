@@ -97,7 +97,7 @@ and add to:   Project properties -> Linker -> General -> *Additional Library Dir
 
 Run Build iipsrv - successful build is located in: 
 
-     <IIP_HOME>\windows\Visual Studio 2017\Release\...\
+     <IIP_HOME>\windows\Visual Studio 2017\Release\x64\
 
 ## Install Apache and IIPImage server
 
@@ -124,7 +124,7 @@ Create <APACHE_HOME>\iipsrv folder
 
 Copy iipsrv.fcgi and \*.dll files from
   
-    <IIP_HOME>\windows\Visual Studio 2017\Release\...\ 
+    <IIP_HOME>\windows\Visual Studio 2017\Release\x64\ 
 
 to: 
   
