@@ -81,7 +81,7 @@ Select **Release** and target: **x64**
 
 Adjust:   Project properties -> C/C++ -> General -> *Additional Include Directories*    
 
-     %VCPKG_ROOT%\installed\x64-windows\include\fastcgi;%VCPKG_ROOT%\installed\x64-windows\include\libpng16;..\..\libmemcached\include;%(AdditionalIncludeDirectories)
+     %VCPKG_ROOT%\installed\x64-windows\include\fastcgi;..\..\libmemcached\include;%(AdditionalIncludeDirectories)
      
 Check/Adjust:   Project properties -> C/C++ -> Preprocessor -> *Preprocessor Definitions*
 
