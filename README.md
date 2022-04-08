@@ -1,4 +1,4 @@
-# IIPImage on Windows 64-bit with OpenJPEG, PNG and Memcached support
+# IIPImage on Windows 64-bit with OpenJPEG and Memcached support
 Build [IIPImage server](https://github.com/ruven/iipsrv) and install it with Apache on Windows 
 
 For feedback please use the [Issues](https://github.com/filak/IIPImage-on-Windows/issues).
@@ -35,7 +35,7 @@ bootstrap-vcpkg -disableMetrics
 - install packages: 
 
 ```
-vcpkg install tiff openjpeg fastcgi libpng --triplet x64-windows 
+vcpkg install tiff openjpeg fastcgi --triplet x64-windows 
 ```
 
 > zlib, libjpeg-turbo and lzma are being installed as part of tiff package
@@ -85,11 +85,11 @@ Adjust:   Project properties -> C/C++ -> General -> *Additional Include Director
      
 Check/Adjust:   Project properties -> C/C++ -> Preprocessor -> *Preprocessor Definitions*
 
-     WIN32;NDEBUG;_CONSOLE;HAVE_OPENJPEG;HAVE_PNG;HAVE_MEMCACHED;VERSION ...
+     WIN32;NDEBUG;_CONSOLE;HAVE_OPENJPEG;NO_PNG;HAVE_MEMCACHED;VERSION ...
      
 Check/Adjust:   Project properties -> Linker -> Input -> *Additional Dependencies*
 
-     jpeg.lib;turbojpeg.lib;libfcgi.lib;tiff.lib;zlib.lib;openjp2.lib;lzma.lib;libpng16.lib;libmemcached.lib;%(AdditionalDependencies)
+     jpeg.lib;turbojpeg.lib;libfcgi.lib;tiff.lib;zlib.lib;openjp2.lib;lzma.lib;libmemcached.lib;%(AdditionalDependencies)
      
 and add to:   Project properties -> Linker -> General -> *Additional Library Directories*
 
@@ -135,7 +135,6 @@ to:
 - jpeg62.dll
 - libfcgi.dll
 - liblzma.dll
-- libpng16.dll
 - openjp2.dll
 - tiff.dll
 - turbojpeg.dll
