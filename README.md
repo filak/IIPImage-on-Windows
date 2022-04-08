@@ -1,9 +1,11 @@
-# IIPImage on Windows
+# IIPImage on Windows 64-bit with OpenJPEG, PNG and Memcached support
 Build [IIPImage server](https://github.com/ruven/iipsrv) and install it with Apache on Windows 
 
 For feedback please use the [Issues](https://github.com/filak/IIPImage-on-Windows/issues).
 
 > **\<...\>** is a placeholder for absolute path to your specific folder
+
+For Win32 build see https://iipimage.sourceforge.io/documentation/server/windows/
 
 ## Install VS 2017 Community
 https://visualstudio.microsoft.com/cs/vs/older-downloads/
@@ -29,10 +31,8 @@ Open Command prompt and run:
 ```
 bootstrap-vcpkg -disableMetrics
 ```
- 
-- install packages: 
 
-> Use modifier for your build target:  :x64-windows  or  :x86-windows  
+- install packages: 
 
 ```
 vcpkg install tiff openjpeg fastcgi libpng --triplet x64-windows 
@@ -61,7 +61,7 @@ https://github.com/ruven/iipsrv
 
 to **\<IIP_HOME\>** folder
 
-### (optional) Download libmemcached
+### Download libmemcached
 
 Source:  https://github.com/awesomized/libmemcached
 
@@ -71,8 +71,6 @@ Download latest binaries - copy *libmemcached-awesome-...* sub-folders (bin, inc
 
     <IIP_HOME>\libmemcached
     
-> This library is 64bit only - so you need to target x64 build
-
 ## Build IIPImage server in VS 2017
 
 Start Visual Studio and open the project file:
@@ -81,28 +79,18 @@ Start Visual Studio and open the project file:
 
 Select **Release** and target: **x64**
 
-Adjust:   Project properties -> C/C++ -> General -> *Additional Include Directories*
+Adjust:   Project properties -> C/C++ -> General -> *Additional Include Directories*    
 
-     ..\..\fcgi\include;%(AdditionalIncludeDirectories)
-     
-If you need memcached use:     
-
-     ..\..\fcgi\include;..\..\libmemcached\include;%(AdditionalIncludeDirectories)
+     %VCPKG_ROOT%\installed\x64-windows\include\fastcgi;%VCPKG_ROOT%\installed\x64-windows\include\libpng16;..\..\libmemcached\include;%(AdditionalIncludeDirectories)
      
 Check/Adjust:   Project properties -> C/C++ -> Preprocessor -> *Preprocessor Definitions*
 
-     WIN32;NO_MEMCACHED;NDEBUG;_CONSOLE;HAVE_OPENJPEG;VERSION ...
-     
-- if you need Memcached support change NO_MEMCACHED to HAVE_MEMCACHED 
+     WIN32;NDEBUG;_CONSOLE;HAVE_OPENJPEG;HAVE_PNG;HAVE_MEMCACHED;VERSION ...
      
 Check/Adjust:   Project properties -> Linker -> Input -> *Additional Dependencies*
 
-     jpeg.lib;libfcgi.lib;tiff.lib;zlib.lib;openjp2.lib;%(AdditionalDependencies)
+     jpeg.lib;turbojpeg.lib;libfcgi.lib;tiff.lib;zlib.lib;openjp2.lib;lzma.lib;libpng16.lib;libmemcached.lib;%(AdditionalDependencies)
      
-If you need Memcached use:
-
-     jpeg.lib;libfcgi.lib;tiff.lib;zlib.lib;openjp2.lib;libmemcached.lib;%(AdditionalDependencies)
-
 and add to:   Project properties -> Linker -> General -> *Additional Library Directories*
 
      ..\..\libmemcached\lib;     
