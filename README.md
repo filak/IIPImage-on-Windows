@@ -32,16 +32,13 @@ bootstrap-vcpkg -disableMetrics
  
 - install packages: 
 
-> Append modifiers for your build target:  :x64-windows  or  :x86-windows  
+> Append modifier for your build target:  :x64-windows  or  :x86-windows  
 
 ```
-vcpkg install zlib:x64-windows
-vcpkg install tiff:x64-windows
-vcpkg install openjpeg:x64-windows
-vcpkg install fastcgi:x64-windows
+vcpkg install tiff openjpeg fastcgi libpng --triplet x64-windows 
 ```
 
-> libjpeg-turbo is installed as part of tiff package
+> zlib, libjpeg-turbo and lzma are being installed as part of tiff package
 
 - run the integrate command: 
 
@@ -150,8 +147,10 @@ to:
 - jpeg62.dll
 - libfcgi.dll
 - liblzma.dll
+- libpng16.dll
 - openjp2.dll
 - tiff.dll
+- turbojpeg.dll
 - zlib1.dll
 
 For Memcached support copy from
@@ -208,6 +207,8 @@ Create *httpd-iipsrv.conf* and place it next to httpd.conf
 ScriptAlias /fcgi-bin/ "${SRVROOT}/iipsrv/"
 
 <Directory "${SRVROOT}/iipsrv/">
+  AllowOverride None
+  Options None
   Require all granted
   # Set the module handler
   AddHandler fcgid-script .fcgi
