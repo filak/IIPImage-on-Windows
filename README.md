@@ -236,9 +236,11 @@ Or install the service:
 Open browser and check some testing images:
       
 - http://iip.test/fcgi-bin/iipsrv.fcgi?FIF=/a.jp2&HEI=128&CVT=jpeg
-- - http://iip.test/fcgi-bin/iipsrv.fcgi?FIF=/a.jp2&HEI=128&CVT=png
+- http://iip.test/fcgi-bin/iipsrv.fcgi?FIF=/a.jp2&HEI=128&CVT=png
 - http://iip.test/fcgi-bin/iipsrv.fcgi?IIIF=/a.jp2/full/700,/0/default.jpg
-- http://iip.test/fcgi-bin/iipsrv.fcgi?FIF=/PalaisDuLouvre.tif&HEI=128&CVT=jpeg      
+- http://iip.test/fcgi-bin/iipsrv.fcgi?IIIF=/a.jp2/full/700,/0/default.png
+- http://iip.test/fcgi-bin/iipsrv.fcgi?FIF=/PalaisDuLouvre.tif&HEI=128&CVT=jpeg
+- http://iip.test/fcgi-bin/iipsrv.fcgi?FIF=/PalaisDuLouvre.tif&HEI=128&CVT=png      
 - http://iip.test/fcgi-bin/iipsrv.fcgi?IIIF=/PalaisDuLouvre.tif/full/700,/0/default.jpg
 
 Check IIPImage log:
