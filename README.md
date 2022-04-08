@@ -1,9 +1,11 @@
-# IIPImage on Windows
+# IIPImage on Windows 64-bit with OpenJPEG and Memcached support
 Build [IIPImage server](https://github.com/ruven/iipsrv) and install it with Apache on Windows 
 
 For feedback please use the [Issues](https://github.com/filak/IIPImage-on-Windows/issues).
 
 > **\<...\>** is a placeholder for absolute path to your specific folder
+
+For Win32 build see https://iipimage.sourceforge.io/documentation/server/windows/
 
 ## Install VS 2017 Community
 https://visualstudio.microsoft.com/cs/vs/older-downloads/
@@ -29,19 +31,14 @@ Open Command prompt and run:
 ```
 bootstrap-vcpkg -disableMetrics
 ```
- 
+
 - install packages: 
 
-> Append modifiers for your build target:  :x64-windows  or  :x86-windows  
-
 ```
-vcpkg install zlib:x64-windows
-vcpkg install tiff:x64-windows
-vcpkg install openjpeg:x64-windows
-vcpkg install fastcgi:x64-windows
+vcpkg install tiff openjpeg fastcgi --triplet x64-windows 
 ```
 
-> libjpeg-turbo is installed as part of tiff package
+> zlib, libjpeg-turbo and lzma are being installed as part of tiff package
 
 - run the integrate command: 
 
@@ -64,7 +61,7 @@ https://github.com/ruven/iipsrv
 
 to **\<IIP_HOME\>** folder
 
-### (optional) Download libmemcached
+### Download libmemcached
 
 Source:  https://github.com/awesomized/libmemcached
 
@@ -74,8 +71,6 @@ Download latest binaries - copy *libmemcached-awesome-...* sub-folders (bin, inc
 
     <IIP_HOME>\libmemcached
     
-> This library is 64bit only - so you need to target x64 build
-
 ## Build IIPImage server in VS 2017
 
 Start Visual Studio and open the project file:
@@ -84,35 +79,25 @@ Start Visual Studio and open the project file:
 
 Select **Release** and target: **x64**
 
-Adjust:   Project properties -> C/C++ -> General -> *Additional Include Directories*
+Adjust:   Project properties -> C/C++ -> General -> *Additional Include Directories*    
 
-     ..\..\fcgi\include;%(AdditionalIncludeDirectories)
-     
-If you need memcached use:     
-
-     ..\..\fcgi\include;..\..\libmemcached\include;%(AdditionalIncludeDirectories)
+     %VCPKG_ROOT%\installed\x64-windows\include\fastcgi;..\..\libmemcached\include;%(AdditionalIncludeDirectories)
      
 Check/Adjust:   Project properties -> C/C++ -> Preprocessor -> *Preprocessor Definitions*
 
-     WIN32;NO_MEMCACHED;NDEBUG;_CONSOLE;HAVE_OPENJPEG;VERSION ...
-     
-- if you need Memcached support change NO_MEMCACHED to HAVE_MEMCACHED 
+     WIN32;NDEBUG;_CONSOLE;HAVE_OPENJPEG;NO_PNG;HAVE_MEMCACHED;VERSION ...
      
 Check/Adjust:   Project properties -> Linker -> Input -> *Additional Dependencies*
 
-     jpeg.lib;libfcgi.lib;tiff.lib;zlib.lib;openjp2.lib;%(AdditionalDependencies)
+     jpeg.lib;turbojpeg.lib;libfcgi.lib;tiff.lib;zlib.lib;openjp2.lib;lzma.lib;libmemcached.lib;%(AdditionalDependencies)
      
-If you need Memcached use:
-
-     jpeg.lib;libfcgi.lib;tiff.lib;zlib.lib;openjp2.lib;libmemcached.lib;%(AdditionalDependencies)
-
 and add to:   Project properties -> Linker -> General -> *Additional Library Directories*
 
      ..\..\libmemcached\lib;     
 
 Run Build iipsrv - successful build is located in: 
 
-     <IIP_HOME>\windows\Visual Studio 2017\Release\...\
+     <IIP_HOME>\windows\Visual Studio 2017\Release\x64\
 
 ## Install Apache and IIPImage server
 
@@ -139,7 +124,7 @@ Create <APACHE_HOME>\iipsrv folder
 
 Copy iipsrv.fcgi and \*.dll files from
   
-    <IIP_HOME>\windows\Visual Studio 2017\Release\...\ 
+    <IIP_HOME>\windows\Visual Studio 2017\Release\x64\ 
 
 to: 
   
@@ -152,6 +137,7 @@ to:
 - liblzma.dll
 - openjp2.dll
 - tiff.dll
+- turbojpeg.dll
 - zlib1.dll
 
 For Memcached support copy from
@@ -208,6 +194,8 @@ Create *httpd-iipsrv.conf* and place it next to httpd.conf
 ScriptAlias /fcgi-bin/ "${SRVROOT}/iipsrv/"
 
 <Directory "${SRVROOT}/iipsrv/">
+  AllowOverride None
+  Options None
   Require all granted
   # Set the module handler
   AddHandler fcgid-script .fcgi
