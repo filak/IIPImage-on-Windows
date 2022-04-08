@@ -32,7 +32,7 @@ bootstrap-vcpkg -disableMetrics
  
 - install packages: 
 
-> Append modifier for your build target:  :x64-windows  or  :x86-windows  
+> Use modifier for your build target:  :x64-windows  or  :x86-windows  
 
 ```
 vcpkg install tiff openjpeg fastcgi libpng --triplet x64-windows 
