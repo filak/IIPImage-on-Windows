@@ -130,10 +130,11 @@ to:
   
     <APACHE_HOME>\iipsrv
     
-\*.dll files 
+\*.dll files - ie:
 
 - jpeg62.dll
 - libfcgi.dll
+- fcgi-0.dll
 - liblzma.dll
 - libpng16.dll
 - openjp2.dll
