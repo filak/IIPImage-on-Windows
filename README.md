@@ -238,6 +238,7 @@ Open browser and check some testing images:
       
 - http://iip.test/fcgi-bin/iipsrv.fcgi?FIF=/a.jp2&HEI=128&CVT=jpeg
 - http://iip.test/fcgi-bin/iipsrv.fcgi?FIF=/a.jp2&HEI=128&CVT=png
+- http://iip.test/fcgi-bin/iipsrv.fcgi?FIF=/e.jp2&HEI=100&CVT=jpeg
 - http://iip.test/fcgi-bin/iipsrv.fcgi?IIIF=/a.jp2/info.json
 - http://iip.test/fcgi-bin/iipsrv.fcgi?IIIF=/e.jp2/full/100,/0/default.jpg
 - http://iip.test/fcgi-bin/iipsrv.fcgi?IIIF=/a.jp2/full/700,/0/default.png
