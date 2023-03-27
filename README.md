@@ -52,6 +52,7 @@ For upgrading the already installed packages use:
 vcpkg update
 git pull
 vcpkg upgrade --no-dry-run
+vcpkg install tiff openjpeg fastcgi libpng --triplet x64-windows
 ```
 
 ## Download IIPImage server
