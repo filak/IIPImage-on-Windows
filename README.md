@@ -210,12 +210,12 @@ FcgidInitialEnv FILESYSTEM_PREFIX "${IIPDATA}"
 ## VERBOSITY: 1 to 6
 FcgidInitialEnv VERBOSITY "6"
 FcgidInitialEnv LOGFILE "${SRVROOT}/logs/iipsrv.log"
-FcgidInitialEnv MAX_IMAGE_CACHE_SIZE "50"
-FcgidInitialEnv JPEG_QUALITY "90"
-FcgidInitialEnv MAX_CVT "3500"
+FcgidInitialEnv MAX_IMAGE_CACHE_SIZE "100"
+#FcgidInitialEnv JPEG_QUALITY "75"
+#FcgidInitialEnv MAX_CVT "3500"
 FcgidInitialEnv MAX_LAYERS "-1"
 #FcgidInitialEnv MEMCACHED_SERVERS "127.0.0.1:11211"
-FcgidInitialEnv ALLOW_UPSCALING "0"
+FcgidInitialEnv ALLOW_UPSCALING "1"
 FcgidInitialEnv EMBED_ICC "0"
 
 # Define the idle timeout as unlimited and the number of processes we want
