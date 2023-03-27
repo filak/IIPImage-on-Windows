@@ -67,7 +67,7 @@ Source:  https://github.com/awesomized/libmemcached
 
 Binaries: https://artifacts.m6w6.name/libmemcached
 
-Download latest binaries - copy *libmemcached-awesome-...* sub-folders (bin, include, lib) to: 
+Download latest libmemcached-awesome-1.*.*.zip and copy *libmemcached-awesome-...* sub-folders (bin, include, lib) to: 
 
     <IIP_HOME>\libmemcached
     
