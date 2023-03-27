@@ -68,7 +68,7 @@ Source:  https://github.com/awesomized/libmemcached
 
 Binaries: https://artifacts.m6w6.name/libmemcached
 
-Download latest libmemcached-awesome-1.\*.\*.zip and copy *libmemcached-awesome-...* sub-folders (bin, include, lib) to: 
+Download latest *libmemcached-awesome-1.1.4.zip* and copy *libmemcached-awesome-...* sub-folders (bin, include, lib) to: 
 
     <IIP_HOME>\libmemcached
     
@@ -79,6 +79,8 @@ Start Visual Studio and open the project file:
      <IIP_HOME>\windows\Visual Studio 2017\iipsrv.vcxproj
 
 Select **Release** and target: **x64**
+
+Open:   Solution Explorer -> iipsrv -> Project properties
 
 Adjust:   Project properties -> C/C++ -> General -> *Additional Include Directories*    
 
@@ -133,9 +135,8 @@ to:
     
 \*.dll files - ie:
 
-- jpeg62.dll
-- libfcgi.dll
 - fcgi-0.dll
+- jpeg62.dll
 - liblzma.dll
 - libpng16.dll
 - openjp2.dll
@@ -147,10 +148,10 @@ For Memcached support copy from
 
 <IIP_HOME>\libmemcached\bin\*.dll
 
-- libhashkit.dll
-- libmemcached.dll
-- libmemcachedprotocol.dll
-- libmemcachedutil.dll
+- hashkit.dll
+- memcached.dll
+- memcachedprotocol.dll
+- memcachedutil.dll
 
 to: 
   
