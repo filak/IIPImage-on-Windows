@@ -52,6 +52,7 @@ For upgrading the already installed packages use:
 vcpkg update
 git pull
 vcpkg upgrade --no-dry-run
+vcpkg install tiff openjpeg fastcgi libpng --triplet x64-windows
 ```
 
 ## Download IIPImage server
@@ -67,7 +68,7 @@ Source:  https://github.com/awesomized/libmemcached
 
 Binaries: https://artifacts.m6w6.name/libmemcached
 
-Download latest binaries - copy *libmemcached-awesome-...* sub-folders (bin, include, lib) to: 
+Download latest *libmemcached-awesome-1.1.4.zip* and copy *libmemcached-awesome-...* sub-folders (bin, include, lib) to: 
 
     <IIP_HOME>\libmemcached
     
@@ -78,6 +79,8 @@ Start Visual Studio and open the project file:
      <IIP_HOME>\windows\Visual Studio 2017\iipsrv.vcxproj
 
 Select **Release** and target: **x64**
+
+Open:   Solution Explorer -> iipsrv -> Project properties
 
 Adjust:   Project properties -> C/C++ -> General -> *Additional Include Directories*    
 
@@ -132,9 +135,8 @@ to:
     
 \*.dll files - ie:
 
-- jpeg62.dll
-- libfcgi.dll
 - fcgi-0.dll
+- jpeg62.dll
 - liblzma.dll
 - libpng16.dll
 - openjp2.dll
@@ -146,10 +148,10 @@ For Memcached support copy from
 
 <IIP_HOME>\libmemcached\bin\*.dll
 
-- libhashkit.dll
-- libmemcached.dll
-- libmemcachedprotocol.dll
-- libmemcachedutil.dll
+- hashkit.dll
+- memcached.dll
+- memcachedprotocol.dll
+- memcachedutil.dll
 
 to: 
   
@@ -208,12 +210,12 @@ FcgidInitialEnv FILESYSTEM_PREFIX "${IIPDATA}"
 ## VERBOSITY: 1 to 6
 FcgidInitialEnv VERBOSITY "6"
 FcgidInitialEnv LOGFILE "${SRVROOT}/logs/iipsrv.log"
-FcgidInitialEnv MAX_IMAGE_CACHE_SIZE "50"
-FcgidInitialEnv JPEG_QUALITY "90"
-FcgidInitialEnv MAX_CVT "3500"
+FcgidInitialEnv MAX_IMAGE_CACHE_SIZE "100"
+#FcgidInitialEnv JPEG_QUALITY "75"
+#FcgidInitialEnv MAX_CVT "3500"
 FcgidInitialEnv MAX_LAYERS "-1"
 #FcgidInitialEnv MEMCACHED_SERVERS "127.0.0.1:11211"
-FcgidInitialEnv ALLOW_UPSCALING "0"
+FcgidInitialEnv ALLOW_UPSCALING "1"
 FcgidInitialEnv EMBED_ICC "0"
 
 # Define the idle timeout as unlimited and the number of processes we want
