@@ -66,9 +66,9 @@ to **\<IIP_HOME\>** folder
 
 Source:  https://github.com/awesomized/libmemcached
 
-Binaries: https://artifacts.m6w6.name/libmemcached
+Binaries: https://artifacts.m6w6.name/libmemcached/ -> 1.N.N/ZIP/Windows-AMD64-MSVC-...-Release/
 
-Download *libmemcached-awesome-N.N.N.zip* and copy *libmemcached-awesome-...* sub-folders (bin, include, lib) to: 
+Download *libmemcached-awesome-1.N.N.zip* and copy *libmemcached-awesome-...* sub-folders (bin, include, lib, share) to: 
 
     <IIP_HOME>\libmemcached
     
