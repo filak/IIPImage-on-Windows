@@ -5,7 +5,7 @@ For feedback please use the [Issues](https://github.com/filak/IIPImage-on-Window
 
 > **\<...\>** is a placeholder for absolute path to your specific folder
 
-For the official Win-build instruction please see https://iipimage.sourceforge.io/documentation/server/windows/
+For the official Win-build instructions please see https://iipimage.sourceforge.io/documentation/server/windows/
 
 ## Install VS 2017 Community
 https://visualstudio.microsoft.com/cs/vs/older-downloads/
