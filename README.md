@@ -1,4 +1,4 @@
-> Since the official releases contain builds for Windows now, this repository is not being updated anymore.
+> Since the [official releases](https://iipimage.sourceforge.io/download) contain builds for Windows now, this repository is not being updated anymore.
 
 # IIPImage on Windows 64-bit with OpenJPEG and Memcached support
 Build [IIPImage server](https://github.com/ruven/iipsrv) and install it with Apache on Windows 
